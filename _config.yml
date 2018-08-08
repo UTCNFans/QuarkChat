@@ -3,10 +3,10 @@ id: UTCNFans/QuarkChat
 # name of the software
 name: QuarkChat Project
 # current version of the software
-version: 0.1 (Beta)
+version: 0.11 (Stable)
 # licence of the software
-license: MIT License
-licenseUrl: http://opensource.org/licenses/MIT
+license: GNU General Public License v3.0
+licenseUrl: https://www.gnu.org/licenses/gpl-3.0.html
 # extension of the favicon, blank to disable
 favicon: png
 
