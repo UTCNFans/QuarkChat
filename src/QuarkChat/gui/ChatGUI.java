@@ -36,7 +36,7 @@ import javax.swing.JMenuItem;
 public class ChatGUI implements WritableGUI {
 
 	public JFrame frmChat;
-	public JFrame frmTrans;
+	public fileSender frmTrans;
 	protected JTextField ipField;
 	protected JTextField sendPort;
 	protected JButton sendBtn;
@@ -100,13 +100,13 @@ public class ChatGUI implements WritableGUI {
 	 */
 	private void initialize() {
 		frmChat = new JFrame();
-		frmTrans = new JFrame();
+		frmTrans = new fileSender();
 		frmChat.setForeground(Color.WHITE);
 		frmTrans.setAlwaysOnTop(true);
 		frmTrans.setVisible(false);
 		frmTrans.setForeground(Color.WHITE);
 		frmChat.setTitle("Chat");
-		frmTrans.setBounds(200,200,400,400);
+		//frmTrans.setBounds(200,200,400,400);
 		frmChat.setBounds(100, 100, 610, 453);
 		frmChat.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmChat.setResizable(false);
@@ -131,7 +131,7 @@ public class ChatGUI implements WritableGUI {
 		
 		browser = new JFileChooser();
 		browser.setBounds(110,110,180,130);
-		frmTrans.getContentPane().add(browser);
+		//frmTrans.getContentPane().add(browser);
 		
 		ipField = new JTextField();
 		ipField.setBounds(121, 9, 367, 20);
