@@ -1,72 +1,11 @@
-Aug 08, 2018 11:18:13 AM QuarkChat.update.CheckUpdate isUpdate
+Dec 19, 2018 7:40:25 PM QuarkChat.update.CheckUpdate isUpdate
 INFO: Connected to site for updates
-Aug 08, 2018 11:18:56 AM QuarkChat.networking.MessageListener run
-INFO: Connexion has been started!
-Aug 08, 2018 11:19:00 AM QuarkChat.networking.MessageOpenuPnP open
-INFO: UPnP port forwarding enabled
-Aug 08, 2018 11:19:59 AM QuarkChat.networking.MessageListener closeConnexions
-INFO: Connexion has been stopped
-Aug 08, 2018 11:20:08 AM QuarkChat.networking.MessageListener run
-INFO: Connexion has been started!
-Aug 08, 2018 11:20:08 AM QuarkChat.networking.MessageOpenuPnP open
-INFO: UPnP port forwarding enabled
-Aug 08, 2018 11:20:28 AM QuarkChat.networking.MessageListener closeConnexions
-INFO: Connexion has been stopped
-Aug 08, 2018 11:20:32 AM QuarkChat.networking.MessageListener run
-INFO: Connexion has been started!
-Aug 08, 2018 11:20:32 AM QuarkChat.networking.MessageOpenuPnP open
-INFO: UPnP port forwarding enabled
-Aug 08, 2018 11:20:55 AM QuarkChat.networking.MessageSender run
-WARNING: chatproject.networking.MessageSender->run
-java.net.ConnectException: Connection timed out: connect
-	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
-	at java.net.PlainSocketImpl.connect(Unknown Source)
-	at java.net.SocksSocketImpl.connect(Unknown Source)
-	at java.net.Socket.connect(Unknown Source)
-	at java.net.Socket.connect(Unknown Source)
-	at java.net.Socket.<init>(Unknown Source)
-	at java.net.Socket.<init>(Unknown Source)
-	at QuarkChat.networking.MessageSender.run(MessageSender.java:32)
+Dec 19, 2018 7:40:29 PM QuarkChat.update.CheckUpdate isUpdate
+WARNING: IOException
+java.io.FileNotFoundException: https://raw.githubusercontent.com/UTCNFans/QuarkChat/master/version
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(Unknown Source)
+	at QuarkChat.update.CheckUpdate.isUpdate(CheckUpdate.java:40)
+	at QuarkChat.main.Main.main(Main.java:26)
 
-Aug 08, 2018 11:21:51 AM QuarkChat.networking.MessageSender run
-WARNING: chatproject.networking.MessageSender->run
-java.net.ConnectException: Connection timed out: connect
-	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
-	at java.net.PlainSocketImpl.connect(Unknown Source)
-	at java.net.SocksSocketImpl.connect(Unknown Source)
-	at java.net.Socket.connect(Unknown Source)
-	at java.net.Socket.connect(Unknown Source)
-	at java.net.Socket.<init>(Unknown Source)
-	at java.net.Socket.<init>(Unknown Source)
-	at QuarkChat.networking.MessageSender.run(MessageSender.java:32)
-
-Aug 08, 2018 11:22:00 AM QuarkChat.networking.MessageSender run
-WARNING: chatproject.networking.MessageSender->run
-java.net.ConnectException: Connection timed out: connect
-	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
-	at java.net.PlainSocketImpl.connect(Unknown Source)
-	at java.net.SocksSocketImpl.connect(Unknown Source)
-	at java.net.Socket.connect(Unknown Source)
-	at java.net.Socket.connect(Unknown Source)
-	at java.net.Socket.<init>(Unknown Source)
-	at java.net.Socket.<init>(Unknown Source)
-	at QuarkChat.networking.MessageSender.run(MessageSender.java:32)
-
-Aug 08, 2018 11:23:15 AM QuarkChat.networking.MessageListener closeConnexions
-INFO: Connexion has been stopped
-Aug 08, 2018 11:23:18 AM QuarkChat.networking.MessageListener run
-INFO: Connexion has been started!
-Aug 08, 2018 11:23:18 AM QuarkChat.networking.MessageOpenuPnP open
-INFO: UPnP port forwarding enabled

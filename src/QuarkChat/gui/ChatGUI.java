@@ -27,6 +27,8 @@ import javax.swing.JCheckBoxMenuItem;
 import javax.swing.Box;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 
 public class ChatGUI implements WritableGUI {
 
@@ -62,6 +64,14 @@ public class ChatGUI implements WritableGUI {
 	
 	/* Connect button */
 	protected MessageListener msgListen;
+	private JMenu mnHistory;
+	private JCheckBox chckbxSave;
+	private JMenu mnFiles;
+	private JComboBox chosenFile;
+	private JButton transferBtn;
+	private JTextField chosenDirectory;
+	private JLabel lblNewLabel;
+	private JLabel lblNewLabel_1;
 	/* -------------- */
 
 	/**
@@ -186,6 +196,31 @@ public class ChatGUI implements WritableGUI {
 		listenPort.setText("8879");
 		ConnexionSettings.add(listenPort);
 		listenPort.setColumns(10);
+		
+		mnHistory = new JMenu("History");
+		menuBar.add(mnHistory);
+		
+		chckbxSave = new JCheckBox("Save");
+		mnHistory.add(chckbxSave);
+		
+		mnFiles = new JMenu("Files");
+		menuBar.add(mnFiles);
+		
+		lblNewLabel = new JLabel("Path");
+		mnFiles.add(lblNewLabel);
+		
+		chosenDirectory = new JTextField();
+		mnFiles.add(chosenDirectory);
+		chosenDirectory.setColumns(10);
+		
+		lblNewLabel_1 = new JLabel("File");
+		mnFiles.add(lblNewLabel_1);
+		
+		chosenFile = new JComboBox();
+		mnFiles.add(chosenFile);
+		
+		transferBtn = new JButton("Transfer");
+		mnFiles.add(transferBtn);
 	}
 
 	//@Override
