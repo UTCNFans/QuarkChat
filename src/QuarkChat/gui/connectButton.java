@@ -27,7 +27,7 @@ public class connectButton {
 		{
 			/* -- Close listening the ports -- */
 			gui.msgListen.interrupt();
-			gui.msgListen.closeConnexions();
+			gui.msgListen.closeConnexions(!gui.returnSave());
 			/* ------------------------------- */
 			gui.btnConnect.setText("Connect");
 			

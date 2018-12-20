@@ -134,7 +134,7 @@ public class ChatGUI implements WritableGUI {
 				if(e.getKeyCode() == KeyEvent.VK_ENTER)
 	            {
 					MessageSender sender = new MessageSender(crypto, msgBox.getText(), ipField.getText(), Integer.parseInt(sendPort.getText()), chatThis);
-					sendMessage.normalMessage(chatThis, sender);
+					sendMessage.normalMessage(chatThis, sender,msgListen.getHand());
 	            }
 			}
 		});
@@ -147,7 +147,7 @@ public class ChatGUI implements WritableGUI {
 		sendBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MessageSender sender = new MessageSender(crypto, msgBox.getText(), ipField.getText(), Integer.parseInt(sendPort.getText()), chatThis);
-				sendMessage.normalMessage(chatThis, sender);
+				sendMessage.normalMessage(chatThis, sender,msgListen.getHand());
 			}
 		});
 		frmChat.getContentPane().add(sendBtn, "cell 8 2,growx,aligny top");
@@ -225,6 +225,10 @@ public class ChatGUI implements WritableGUI {
 
 	//@Override
 	public void write(String s, int i) {
-		sendWrite.write(chatThis, i, s);
+		sendWrite.write(chatThis, i, s,msgListen.getHand());
+	}
+	
+	public boolean returnSave() {
+		return chckbxSave.isSelected();
 	}
 }

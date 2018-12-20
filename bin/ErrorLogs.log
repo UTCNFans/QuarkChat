@@ -1,11 +1,14 @@
-Dec 19, 2018 7:40:25 PM QuarkChat.update.CheckUpdate isUpdate
+Dec 20, 2018 9:46:11 AM QuarkChat.update.CheckUpdate isUpdate
 INFO: Connected to site for updates
-Dec 19, 2018 7:40:29 PM QuarkChat.update.CheckUpdate isUpdate
-WARNING: IOException
-java.io.FileNotFoundException: https://raw.githubusercontent.com/UTCNFans/QuarkChat/master/version
-	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source)
-	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
-	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(Unknown Source)
-	at QuarkChat.update.CheckUpdate.isUpdate(CheckUpdate.java:40)
-	at QuarkChat.main.Main.main(Main.java:26)
-
+Dec 20, 2018 9:46:40 AM QuarkChat.networking.MessageListener run
+INFO: Connexion has been started!
+Dec 20, 2018 9:46:46 AM QuarkChat.networking.MessageOpenuPnP open
+WARNING: UPnP is not available
+Dec 20, 2018 9:47:23 AM QuarkChat.networking.MessageListener closeConnexions
+INFO: Connexion has been stopped
+Dec 20, 2018 9:47:45 AM QuarkChat.networking.MessageListener run
+INFO: Connexion has been started!
+Dec 20, 2018 9:47:45 AM QuarkChat.networking.MessageOpenuPnP open
+WARNING: UPnP is not available
+Dec 20, 2018 9:47:58 AM QuarkChat.networking.MessageListener closeConnexions
+INFO: Connexion has been stopped
