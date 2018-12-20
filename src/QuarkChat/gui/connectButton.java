@@ -21,9 +21,6 @@ public class connectButton {
 			
 			gui.sendBtn.setEnabled(true);
 			gui.msgBox.setEnabled(true);
-			
-			gui.frmTrans.setEnabled(true);
-			gui.mntmChooseFile.setEnabled(true);
 			/* ----------------------------------------------------------------- */
 		}
 		else
@@ -42,8 +39,6 @@ public class connectButton {
 			gui.msgBox.setText(null); // empty box
 			gui.sendBtn.setEnabled(false);
 			gui.msgBox.setEnabled(false);
-			
-			gui.mntmChooseFile.setEnabled(false);
 			/* --------------- */
 		}
 	}

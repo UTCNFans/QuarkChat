@@ -32,7 +32,7 @@ public class MessageSender extends Thread{
 			Socket client = new Socket(hostname, port);
 			byte []cryptMsg;
 			
-			if(crypto.Symmetric.isEnable("AES") == true) // if AES encryption is ON or any other encryption
+			if(crypto.Symmetric.isEnable("AES") == true) // if AES encryption is ON
 			{
 				cryptMsg = AES.encrypt(message, crypto.Symmetric.key[0]);
 			}
@@ -40,9 +40,7 @@ public class MessageSender extends Thread{
 			{
 				cryptMsg = message.getBytes();
 			}
-		
-			client.getOutputStream().write(1); // it is a message not a file
-
+			
 			client.getOutputStream().write(cryptMsg);
 			client.close();
 		} catch (UnknownHostException error) {
@@ -53,4 +51,6 @@ public class MessageSender extends Thread{
 			LogFile.logger.log(Level.WARNING, "chatproject.networking.MessageSender->run", error);
 		}
 	}
+	
+	
 }

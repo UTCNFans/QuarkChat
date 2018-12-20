@@ -6,7 +6,7 @@ import QuarkChat.errorhandle.LogFile;
 import QuarkChat.networking.upnp.*;
 
 public class MessageOpenuPnP {
-	public static boolean open(int PORT)
+	public static void open(int PORT)
 	{
 		if (UPnP.isUPnPAvailable()) { //is UPnP available?
             if (UPnP.isMappedTCP(PORT)) 
@@ -15,12 +15,7 @@ public class MessageOpenuPnP {
             } 
             else if (UPnP.openPortTCP(PORT)) 
             { //try to map port
-            	/* wait until port is opened */
-            	while(UPnP.isMappedTCP(PORT) != true);
-            	/* ------------------------- */
-            	
                 LogFile.logger.log(Level.INFO, "UPnP port forwarding enabled");
-                return true;
             } 
             else 
             {
@@ -29,7 +24,5 @@ public class MessageOpenuPnP {
         } else {
             LogFile.logger.log(Level.WARNING, "UPnP is not available");
         }
-		
-	    return false;
 	}
 }
