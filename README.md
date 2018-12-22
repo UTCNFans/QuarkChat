@@ -11,14 +11,14 @@
 ## Connexion
 
 To guarantee you a highly anonymous connexion, program uses peer-to-peer connexion protocol. (no server involved, so your data will no be monitored).\
-For this version **0.11** automatic port forwarding is implemented using uPnP tehnology, to prevent the use of servers.\
+For this version **0.21** automatic port forwarding is implemented using uPnP tehnology, to prevent the use of servers.\
 This application is using TCP ports.
 
 ---
 
 ## Update
 
-From the version **0.11** there is implemneted a automatic update checker. Update will be done manually, by downloading the last version of the program.
+From the version **0.21** there is implemneted a automatic update checker. Update will be done manually, by downloading the last version of the program.
 
 ---
 
@@ -26,6 +26,12 @@ From the version **0.11** there is implemneted a automatic update checker. Updat
 
 For this version, only Symmetric Encryption Algorithms are present.\
 Encryption can be actived using the menu **Encryption Settings**
+
+---
+
+## File transfer
+
+From now, users will be able to transfer files using this application. 
 
 ---
 
