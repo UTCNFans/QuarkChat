@@ -27,7 +27,7 @@ public final class AES {
 	}
 	
 	
-	public static byte[] encrypt(String DataInputText, String Password)
+	public static byte[] encrypt(byte[] DataInputText, String Password)
 	{
 	    byte[] iv = {93, 125, -77, 12, 81, -5, -128, 127, 0, 74, 2, 74, 96, 120, -56, 86 };
 	    IvParameterSpec ivspec = new IvParameterSpec(iv);
@@ -57,7 +57,7 @@ public final class AES {
 		}
 		    
 	    try {
-			return cipher.doFinal(DataInputText.getBytes());
+			return cipher.doFinal(DataInputText);
 		} catch (IllegalBlockSizeException error_msg) {
 	    	LogFile.logger.log(Level.WARNING, "Error at chatproject.encryption.AES", error_msg);
 	    	ErrorProcess = true;
@@ -69,7 +69,7 @@ public final class AES {
 		}
 	}
 	
-	public static String decrypt(byte[] DataInputText, String Password)
+	public static byte[] decrypt(byte[] DataInputText, String Password)
 	{
 	    byte[] iv = {93, 125, -77, 12, 81, -5, -128, 127, 0, 74, 2, 74, 96, 120, -56, 86 };
 	    IvParameterSpec ivspec = new IvParameterSpec(iv);
@@ -99,7 +99,7 @@ public final class AES {
 		}
 		    
 	    try {
-			return new String(cipher.doFinal(DataInputText));
+			return cipher.doFinal(DataInputText);
 		} catch (IllegalBlockSizeException error_msg) {
 	    	LogFile.logger.log(Level.WARNING, "Error at chatproject.encryption.AES", error_msg);
 			ErrorProcess = true;

@@ -3,7 +3,6 @@ package QuarkChat.main;
 import java.awt.EventQueue;
 import java.util.logging.Level;
 
-import QuarkChat.encryption.types.*;
 import QuarkChat.errorhandle.LogFile;
 import QuarkChat.gui.ChatGUI;
 import QuarkChat.update.CheckUpdate;
@@ -12,10 +11,6 @@ import QuarkChat.update.UpdateGUI;
 public class Main {
 
 	public static void main(String[] args) {
-		/* Encryption modules */
-		EncrType encryptModules = new EncrType();
-		/* ------------------ */
-		
 		/* Error handle */
 		LogFile.Settings();
 		/* -> use LogFile. (it is static)
@@ -44,14 +39,14 @@ public class Main {
 			public void run() {
 				try {
 					//encryptModules.disableAll();
-					ChatGUI window = new ChatGUI(encryptModules);
+					ChatGUI window = new ChatGUI();
 					window.frmChat.setVisible(true);
 					
 					if(updateWindow.frame.isVisible())
 					{
 						updateWindow.frame.toFront();
-
 					}
+
 				} catch (Exception error) {
 					LogFile.logger.log(Level.SEVERE, "Program could not start properly or it has a fatal error", error);
 				}

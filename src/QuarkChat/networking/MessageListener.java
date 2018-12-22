@@ -1,14 +1,17 @@
 package QuarkChat.networking;
 
-import QuarkChat.encryption.types.*;
 import QuarkChat.errorhandle.LogFile;
 import QuarkChat.gui.ChatGUI;
+import QuarkChat.historyFile.FileHandler;
+import QuarkChat.messageformats.FileFormatR;
+import QuarkChat.messageformats.MessageFormatR;
 import QuarkChat.networking.upnp.UPnP;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Arrays;
 import java.util.logging.Level;
 
 
@@ -20,12 +23,16 @@ public class MessageListener extends Thread {
 	int port = 8877;
 	ChatGUI gui;
 	final int MaximumSize = 4 * 1024;
-	EncrType crypto;
+	FileHandler hand;
+	
+	// file to receive
+	private FileFormatR fisierR = null;
 
-	public MessageListener(ChatGUI gui, int port, EncrType encry_args) {
+	public MessageListener(ChatGUI gui, int port) {
+		hand = new FileHandler(); // Vicodrus added comit
+		
 		this.gui = gui;
 		this.port = port;
-		this.crypto = encry_args;
 		try {
 			server = new ServerSocket(port);
 		} catch (IOException error) {
@@ -33,11 +40,8 @@ public class MessageListener extends Thread {
 		}
 	}
 	
-
-	
 	@Override
 	public void run() {
-		byte[] InputData = new byte[MaximumSize];
 		LogFile.logger.log(Level.INFO, "Connexion has been started!");
 		
 		/* --- Open uPnP --- */
@@ -62,21 +66,51 @@ public class MessageListener extends Thread {
 		try {
 			while((clientSocket = server.accept()) != null) { 
 				InputStream in = clientSocket.getInputStream();
+				BufferedInputStream BufferMsg = new BufferedInputStream(in);
 				
-				
-				BufferedInputStream BufferMsg = new BufferedInputStream(in);	
-				int BuffSize = MessageChatBox.readBuffer(BufferMsg, InputData); /* Read data */
-				
-				if(BuffSize == -1) // nothing found
+				byte[] bufferTemp = new byte[2048];
+				BufferMsg.read(bufferTemp);
+
+				if(bufferTemp[0] == 0x34)
 				{
-					System.err.println("[Error] Empty message! Maybe your connexion is compromised!");
-					return; // force exit
+					// it is a MESSAGE
+					MessageFormatR mesaje = new MessageFormatR(bufferTemp);
+					if(mesaje.indigest(null) != null) {
+						String mesaj = new String(mesaje.indigest(null));
+						gui.write(mesaj, 1);
+					}else {
+						gui.write("Ai primit un mesaj encriptat pe care nu l-ai putut decripta! "
+								+ "(cheie sau setari gresite)", 2);
+					}
 				}
-				
-				if(InputData[0] == 1) // it is a message
-				{
-					InputData[0] = 0; // transform in null
-					MessageChatBox.showChat(gui, InputData, BuffSize, crypto); // show message on chat
+				else if(bufferTemp[0] == 0x35){
+					// it is a FILE
+
+					if(this.gui.FileReceive == true)
+					{
+						// can receive files
+						if(this.fisierR == null) {
+							// nothing received yet
+							this.fisierR = new FileFormatR(bufferTemp);
+							gui.write("[File Transfer] You received the file: " + this.fisierR.fileName, 2);
+						}
+						else if(this.fisierR != null && Arrays.equals(FileFormatR.getSecureCode(bufferTemp), this.fisierR.secureCode) == false) {
+							// it is a other file which is transferd 
+							gui.write("[File Transfer] The file " + this.fisierR.fileName + " was not transfered.", 2);
+
+							this.fisierR = new FileFormatR(bufferTemp);
+							gui.write("[File Transfer] You received the file: " + this.fisierR.fileName, 2);
+						}
+						
+						this.fisierR.indigest(bufferTemp);
+						if(this.fisierR.isFinish == 1) {
+							gui.write("[File Transfer] The file " + this.fisierR.fileName + " has been successfully transfered!", 2);
+						}
+					}
+					else {
+						gui.write("[File Transfer] Your dialog partner has tried to send you a file.", 2);
+						LogFile.logger.log(Level.WARNING, "[File Transfer] Your dialog partner has tried to send you a file. (File Receive is disabled from menu)");
+					}
 				}
 			}
 		} catch (IOException error) {
@@ -84,7 +118,7 @@ public class MessageListener extends Thread {
 		}
 	}
 	
-	public void closeConnexions()
+	public void closeConnexions(boolean del)
 	{		
 		try {
 			if(UPnP.isMappedTCP(port))
@@ -99,9 +133,23 @@ public class MessageListener extends Thread {
 			{
 				this.server.close();
 			}
+			if(del==true) {
+				hand.deleteFile();
+			}
+			else {
+				hand.closeFile();
+			}
 			LogFile.logger.log(Level.INFO, "Connexion has been stopped");
 		} catch (IOException error) {
-			LogFile.logger.log(Level.WARNING, "chatproject.networking.MessageListener.closeConnexions", error);
+			LogFile.logger.log(Level.FINEST, "chatproject.networking.MessageListener.closeConnexions", error);
 		}
 	}
+	public FileHandler getHand() {
+		return hand;
+	}
+
+	public void setHand(FileHandler hand) {
+		this.hand = hand;
+	}
+	
 }

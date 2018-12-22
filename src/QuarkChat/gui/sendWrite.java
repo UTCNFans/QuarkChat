@@ -5,13 +5,16 @@ import java.awt.Color;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.StyleConstants;
 
+import QuarkChat.historyFile.FileHandler;
+
 public class sendWrite {
-	public static void write(ChatGUI gui, int i, String message)
+	public static void write(ChatGUI gui, int i, String message, FileHandler hand)
 	{
 		if(i == 1) {
 		StyleConstants.setForeground(gui.style, Color.BLUE);
 		try {
 			gui.document.insertString(gui.document.getLength(), "Them: ", gui.style);
+			hand.write("Them: ");
 		} catch (BadLocationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -19,6 +22,7 @@ public class sendWrite {
 		StyleConstants.setForeground(gui.style, Color.BLACK);
 		try {
 			gui.document.insertString(gui.document.getLength(), message + System.lineSeparator(), gui.style);
+			hand.write(message+"\n");
 		} catch (BadLocationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
