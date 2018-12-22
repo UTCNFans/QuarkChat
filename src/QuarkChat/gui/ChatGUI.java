@@ -5,6 +5,8 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 
 import QuarkChat.encryption.types.EncrSym;
+import QuarkChat.errorhandle.LogFile;
+import QuarkChat.messageformats.FileFormat;
 import QuarkChat.networking.MessageListener;
 import QuarkChat.networking.MessageSender;
 import QuarkChat.networking.WritableGUI;
@@ -14,6 +16,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import javax.swing.text.DefaultStyledDocument;
@@ -25,10 +30,10 @@ import javax.swing.Box;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JSeparator;
 import javax.swing.JMenuItem;
+import java.awt.Font;
 
 public class ChatGUI implements WritableGUI {
 
@@ -66,6 +71,7 @@ public class ChatGUI implements WritableGUI {
 	
 	/* Connect button */
 	protected MessageListener msgListen;
+	protected MessageSender msgSender;
 	/* -------------- */
 	
 	/* Connexion Settings */
@@ -76,18 +82,21 @@ public class ChatGUI implements WritableGUI {
 	/* ------------------ */
 	
 	/* Message I/O */
-	protected MessageSender sender;
 	protected JMenuItem mntmChooseFile;
 	/* ---------------- */
+	
+	/* File chooser */
+	protected JFileChooser fileChooser = null;
+	/* ------------ */
 	
 	private JMenu mnHistory;
 	private JCheckBox chckbxSave;
 	private JMenu mnFiles;
-	private JComboBox chosenFile;
-	private JButton transferBtn;
-	private JTextField chosenDirectory;
-	private JLabel lblNewLabel;
-	private JLabel lblNewLabel_1;
+	private JMenu mnNewMenu_1;
+	
+	/* FILE RECEIVE */
+	public boolean FileReceive = false; // when it is false it will receive no file
+	/* ------------ */
 
 	/**
 	 *Create the application.
@@ -152,6 +161,7 @@ public class ChatGUI implements WritableGUI {
 		
 		document = new DefaultStyledDocument();
 		chatBox = new JTextPane(document);
+		chatBox.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		chatBox.setEditable(false);
 		scrollPane.setViewportView(chatBox);
 		
@@ -169,8 +179,7 @@ public class ChatGUI implements WritableGUI {
 			public void keyPressed(KeyEvent e) {
 				if(e.getKeyCode() == KeyEvent.VK_ENTER)
 	            {
-					MessageSender sender = new MessageSender(msgBox.getText(), ipField.getText(), Integer.parseInt(sendPort.getText()), chatThis);
-					sendMessage.normalMessage(chatThis, sender,msgListen.getHand());
+					sendMessage.normalMessage(chatThis, msgSender, msgListen.getHand());
 	            }
 			}
 		});
@@ -183,8 +192,7 @@ public class ChatGUI implements WritableGUI {
 		
 		sendBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			    sender = new MessageSender(msgBox.getText(), ipField.getText(), Integer.parseInt(sendPort.getText()), chatThis);
-				sendMessage.normalMessage(chatThis, sender,msgListen.getHand());
+				sendMessage.normalMessage(chatThis, msgSender, msgListen.getHand());
 			}
 		});
 		frmChat.getContentPane().add(sendBtn);
@@ -254,27 +262,50 @@ public class ChatGUI implements WritableGUI {
 		mnFiles = new JMenu("Files");
 		menuBar.add(mnFiles);
 		
-		lblNewLabel = new JLabel("Path");
-		mnFiles.add(lblNewLabel);
+		mnNewMenu_1 = new JMenu("Upload File");
+		mnFiles.add(mnNewMenu_1);
 		
-		chosenDirectory = new JTextField();
-		mnFiles.add(chosenDirectory);
-		chosenDirectory.setColumns(10);
+		this.fileChooser = new JFileChooser();
+		mnNewMenu_1.add(fileChooser);
+		this.fileChooser.setControlButtonsAreShown(false);
+		this.fileChooser.setEnabled(false);
 		
-		lblNewLabel_1 = new JLabel("File");
-		mnFiles.add(lblNewLabel_1);
+		this.fileChooser.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(fileChooser.getSelectedFile() != null) {
+					chatThis.write("[File Loader] You chose to open this file: " +
+				    		   fileChooser.getSelectedFile().getName(), 2);
+					try {
+						msgSender.fisier = new FileFormat(fileChooser.getSelectedFile().getAbsolutePath());
+					} catch (FileNotFoundException error) {
+						chatThis.write("[Error] There was an error at loading this file! Please check the logs.", 2);
+						LogFile.logger.log(Level.WARNING, "ChatGUI->fileChooser (action listener)", error);
+					}
+
+				}
+			}
+		});
 		
-		chosenFile = new JComboBox();
-		mnFiles.add(chosenFile);
-		
-		transferBtn = new JButton("Transfer");
-		mnFiles.add(transferBtn);
-	}
+		JCheckBox checkBox = new JCheckBox("Allow File Receive");
+		mnFiles.add(checkBox);
+		checkBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(checkBox.isSelected())
+				{
+					FileReceive = true;
+				}
+				else
+				{
+					FileReceive = false;
+				}
+			}
+		});
+	} 
 
 
 	//@Override
 	public void write(String s, int i) {
-		sendWrite.write(chatThis, i, s,msgListen.getHand());
+		sendWrite.write(chatThis, i, s, msgListen.getHand());
 	}
 	
 	public boolean returnSave() {

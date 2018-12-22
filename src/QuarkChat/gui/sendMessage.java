@@ -28,8 +28,7 @@ public class sendMessage{
 		}
         
 		//chatBox.append("Me: " + msgBox.getText() + System.lineSeparator());
-        System.out.println(sender.hashCode());
-		sender.start();
+		sender.lista_mesaje.add(gui.msgBox.getText()); //adaugam mesajul la coada
 		gui.msgBox.setText(null);
 	}
 }

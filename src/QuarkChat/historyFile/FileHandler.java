@@ -13,7 +13,6 @@ public class FileHandler {
 	
 	public static void main(String[] args) {
 	FileHandler f= new FileHandler();
-	f.write("Cashhh");
 	f.deleteFile();;
 	}
 	

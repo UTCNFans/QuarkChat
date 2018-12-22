@@ -7,5 +7,5 @@ public interface Reassamble {
 			0x35 // mark for FILE FORMAT
 	};
 	
-	public abstract byte[] indigest();
+	public abstract byte[] indigest(byte[] InputData);
 }

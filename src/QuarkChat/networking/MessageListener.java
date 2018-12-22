@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Arrays;
 import java.util.logging.Level;
 
 
@@ -23,8 +24,13 @@ public class MessageListener extends Thread {
 	ChatGUI gui;
 	final int MaximumSize = 4 * 1024;
 	FileHandler hand;
+	
+	// file to receive
+	private FileFormatR fisierR = null;
 
 	public MessageListener(ChatGUI gui, int port) {
+		hand = new FileHandler(); // Vicodrus added comit
+		
 		this.gui = gui;
 		this.port = port;
 		try {
@@ -69,8 +75,8 @@ public class MessageListener extends Thread {
 				{
 					// it is a MESSAGE
 					MessageFormatR mesaje = new MessageFormatR(bufferTemp);
-					if(mesaje.indigest() != null) {
-						String mesaj = new String(mesaje.indigest());
+					if(mesaje.indigest(null) != null) {
+						String mesaj = new String(mesaje.indigest(null));
 						gui.write(mesaj, 1);
 					}else {
 						gui.write("Ai primit un mesaj encriptat pe care nu l-ai putut decripta! "
@@ -79,10 +85,33 @@ public class MessageListener extends Thread {
 				}
 				else if(bufferTemp[0] == 0x35){
 					// it is a FILE
-					FileFormatR file = new FileFormatR(bufferTemp);
-				}
 
-				
+					if(this.gui.FileReceive == true)
+					{
+						// can receive files
+						if(this.fisierR == null) {
+							// nothing received yet
+							this.fisierR = new FileFormatR(bufferTemp);
+							gui.write("[File Transfer] You received the file: " + this.fisierR.fileName, 2);
+						}
+						else if(this.fisierR != null && Arrays.equals(FileFormatR.getSecureCode(bufferTemp), this.fisierR.secureCode) == false) {
+							// it is a other file which is transferd 
+							gui.write("[File Transfer] The file " + this.fisierR.fileName + " was not transfered.", 2);
+
+							this.fisierR = new FileFormatR(bufferTemp);
+							gui.write("[File Transfer] You received the file: " + this.fisierR.fileName, 2);
+						}
+						
+						this.fisierR.indigest(bufferTemp);
+						if(this.fisierR.isFinish == 1) {
+							gui.write("[File Transfer] The file " + this.fisierR.fileName + " has been successfully transfered!", 2);
+						}
+					}
+					else {
+						gui.write("[File Transfer] Your dialog partner has tried to send you a file.", 2);
+						LogFile.logger.log(Level.WARNING, "[File Transfer] Your dialog partner has tried to send you a file. (File Receive is disabled from menu)");
+					}
+				}
 			}
 		} catch (IOException error) {
 			LogFile.logger.log(Level.FINEST, "IOException", error);
@@ -112,7 +141,7 @@ public class MessageListener extends Thread {
 			}
 			LogFile.logger.log(Level.INFO, "Connexion has been stopped");
 		} catch (IOException error) {
-			LogFile.logger.log(Level.WARNING, "chatproject.networking.MessageListener.closeConnexions", error);
+			LogFile.logger.log(Level.FINEST, "chatproject.networking.MessageListener.closeConnexions", error);
 		}
 	}
 	public FileHandler getHand() {

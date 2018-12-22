@@ -24,8 +24,8 @@ public class MessageFormatR implements Reassamble {
 	}
 	
 	@Override
-	public byte[] indigest() {
-		return EncrSym.decrypt(this.message_byte, encryptionUsage, this.messageSize);
+	public byte[] indigest(byte[] InputData) {
+		return EncrSym.decrypt(this.message_byte, this.encryptionUsage, this.messageSize);
 	}
 
 }

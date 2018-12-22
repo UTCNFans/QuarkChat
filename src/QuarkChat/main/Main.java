@@ -45,8 +45,8 @@ public class Main {
 					if(updateWindow.frame.isVisible())
 					{
 						updateWindow.frame.toFront();
-
 					}
+
 				} catch (Exception error) {
 					LogFile.logger.log(Level.SEVERE, "Program could not start properly or it has a fatal error", error);
 				}
