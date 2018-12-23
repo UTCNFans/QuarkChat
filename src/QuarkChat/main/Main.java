@@ -3,6 +3,7 @@ package QuarkChat.main;
 import java.awt.EventQueue;
 import java.util.logging.Level;
 
+import QuarkChat.encryption.types.fileDecryption;
 import QuarkChat.errorhandle.LogFile;
 import QuarkChat.gui.ChatGUI;
 import QuarkChat.update.CheckUpdate;
@@ -41,6 +42,10 @@ public class Main {
 					//encryptModules.disableAll();
 					ChatGUI window = new ChatGUI();
 					window.frmChat.setVisible(true);
+					
+					// set fileDecryption informations
+					fileDecryption.forceStop = false;
+					fileDecryption.gui = window;
 					
 					if(updateWindow.frame.isVisible())
 					{

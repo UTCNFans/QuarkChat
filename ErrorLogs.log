@@ -1,8 +1,0 @@
-Dec 23, 2018 1:07:40 PM QuarkChat.update.CheckUpdate isUpdate
-INFO: Connected to site for updates
-Dec 23, 2018 1:07:45 PM QuarkChat.main.Main main
-INFO: No update available!
-Dec 23, 2018 1:08:07 PM QuarkChat.networking.MessageListener run
-INFO: Connexion has been started!
-Dec 23, 2018 1:08:52 PM QuarkChat.networking.MessageListener closeConnexions
-INFO: Connexion has been stopped

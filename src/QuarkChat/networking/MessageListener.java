@@ -1,5 +1,6 @@
 package QuarkChat.networking;
 
+import QuarkChat.encryption.types.fileDecryption;
 import QuarkChat.errorhandle.LogFile;
 import QuarkChat.gui.ChatGUI;
 import QuarkChat.historyFile.FileHandler;
@@ -86,7 +87,7 @@ public class MessageListener extends Thread {
 				}
 				else if(bufferTemp[0] == 0x35){
 					// it is a FILE
-
+					
 					if(this.gui.FileReceive == true)
 					{
 						// can receive files
@@ -95,7 +96,7 @@ public class MessageListener extends Thread {
 							this.fisierR = new FileFormatR(bufferTemp);
 							gui.write("[File Transfer] You received the file: " + this.fisierR.fileName, 2);
 						}
-						else if(this.fisierR != null && Arrays.equals(FileFormatR.getSecureCode(bufferTemp), this.fisierR.secureCode) == false) {
+						else if(Arrays.equals(FileFormatR.getSecureCode(bufferTemp), this.fisierR.secureCode) == false) {
 							// it is a other file which is transferd 
 							gui.write("[File Transfer] The file " + this.fisierR.fileName + " was not transfered.", 2);
 
@@ -106,12 +107,23 @@ public class MessageListener extends Thread {
 						this.fisierR.indigest(bufferTemp);
 						if(this.fisierR.isFinish == 1) {
 							gui.write("[File Transfer] The file " + this.fisierR.fileName + " has been successfully transfered!", 2);
+							
+							if(this.fisierR.isEncrypted == true) {
+								gui.write("[File Transfer] File decryption has started...", 2);
+								
+								// start file decryption
+								fileDecryption decrypt = new fileDecryption(this.fisierR);
+								decrypt.start();
+							}
+							
+							this.fisierR = null; // stergem referinta dupa ce a fost transferat total
 						}
 					}
-					else {
-						gui.write("[File Transfer] Your dialog partner has tried to send you a file.", 2);
-						LogFile.logger.log(Level.WARNING, "[File Transfer] Your dialog partner has tried to send you a file. (File Receive is disabled from menu)");
-					}
+				}
+				else {
+					gui.write("[Security] You received an unknown type of message. Maybe your connexion has been compromised, we recommend to close the application immediately.", 2);
+					LogFile.logger.log(Level.SEVERE, "[Security] You received an unknown type of message. Maybe your connexion has been compromised."
+							+ "\nThe following DataInput array of bytes has been received: " + new String(bufferTemp));
 				}
 			}
 		} catch (IOException error) {

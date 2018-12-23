@@ -14,7 +14,7 @@ public class MessageFormatR implements Reassamble {
 		// message size
 		int startPos = encryptionsMark.length + 1;
 		this.messageSize = InputData[startPos] << 24 | (InputData[startPos + 1] & 0xFF) << 16 | (InputData[startPos + 2] & 0xFF) << 8 | (InputData[startPos + 3] & 0xFF);
-		
+
 		// encryption usage
 		System.arraycopy(InputData, 1, encryptionUsage, 0, 1);
 		

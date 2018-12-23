@@ -1,2 +1,12 @@
-Dec 23, 2018 1:07:40 PM QuarkChat.update.CheckUpdate isUpdate
+Dec 24, 2018 12:52:08 AM QuarkChat.update.CheckUpdate isUpdate
 INFO: Connected to site for updates
+Dec 24, 2018 12:52:08 AM QuarkChat.main.Main main
+INFO: No update available!
+Dec 24, 2018 12:52:12 AM QuarkChat.networking.MessageListener run
+INFO: Connexion has been started!
+Dec 24, 2018 12:52:15 AM QuarkChat.networking.MessageOpenuPnP open
+INFO: UPnP port forwarding enabled
+Dec 24, 2018 12:54:31 AM QuarkChat.networking.MessageListener closeConnexions
+INFO: Connexion has been stopped
+Dec 24, 2018 12:54:31 AM QuarkChat.gui.closeFrame$1 windowClosing
+INFO: Application is closing

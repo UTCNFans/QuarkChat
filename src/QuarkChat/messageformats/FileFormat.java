@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.logging.Level;
 
 import QuarkChat.encryption.SHA_1;
+import QuarkChat.encryption.types.EncrSym;
 import QuarkChat.errorhandle.LogFile;
 
 public class FileFormat implements Formats {
@@ -54,7 +55,7 @@ public class FileFormat implements Formats {
 		// copiem numele fisierului
 		// daca numele fisierului este mai mare de 20 caractere
 		if(fisier.getName().length() >= 20) {
-			System.arraycopy(fisier.getName().substring(0, 20).getBytes(), 0, fileName, 0, 20);
+			System.arraycopy((fisier.getName().substring(0, 19) + "\0").getBytes(), 0, fileName, 0, 20);
 		}
 		else {
 			System.arraycopy(fisier.getName().getBytes(), 0, fileName, 0, fisier.getName().getBytes().length);
@@ -107,14 +108,21 @@ public class FileFormat implements Formats {
 				encryptionsMark.length);
 		
 		// add the file content to the byte array
-		int fileRemainingSize = this.file.available()>FileFormat.MAX_fileread?FileFormat.MAX_fileread:this.file.available();
-		byte[] tempData = ByteBuffer.allocate(4).putInt(fileRemainingSize).array();
+		int fileRemainingSize = this.file.available()>FileFormat.MAX_fileread?FileFormat.MAX_fileread:this.file.available();		
+
+		// buffer
+		byte[] bufferEncr = new byte[fileRemainingSize];
+		this.file.read(bufferEncr, 0, fileRemainingSize);
 		
+		// encrypt this module
+		byte[] encrData = EncrSym.encrypt(bufferEncr);
+		System.arraycopy(encrData, 0, this.dataPack, 
+				1 + 1 + 20 + 20 + encryptionsMark.length + 4, encrData.length);
 		
 		// copy size
+		byte[] tempData = ByteBuffer.allocate(4).putInt(encrData.length).array();
 		System.arraycopy(tempData, 0, this.dataPack, 1 + 1 + 20 + 20 + encryptionsMark.length, 4);
 
-		this.file.read(this.dataPack, 1 + 1 + 20 + 20 + encryptionsMark.length + 4, fileRemainingSize);
 		if(this.file.available() == 0) {
 			// nothing left to be transfered
 			isFinish = 1;

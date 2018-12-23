@@ -16,12 +16,16 @@ public class FileFormatR implements Reassamble {
 	public String fileName = null;
 	private File fileFile = null;
 	
-	// useful infromations
+	// useful informations
 	public byte[] secureCode = new byte[20];
 	public byte isFinish = 0;
 	
 	private final byte[] encryptionsMark = QuarkChat.encryption.types.EncrSym.whatEnable();
 
+	// encryption informations
+	public boolean isEncrypted = false;
+	private byte[] encryptionUsage = new byte[5];
+	
 	public FileFormatR(byte[] InputData) {		
 		// get file name
 		byte[] fileNameByte = new byte[20];
@@ -34,6 +38,10 @@ public class FileFormatR implements Reassamble {
 		
 		// get secure code 
 		System.arraycopy(InputData, 1 + 1 + 20, this.secureCode, 0, 20);
+		
+		// set encryption procedure
+		this.isEncrypted = InputData[1 + 1 + 20 + 20] == 1? true:false;
+		encryptionUsage[0] = 1; // mark the use of the encryption
 	}
 	
 	private String getAvaible(String fileName) {
