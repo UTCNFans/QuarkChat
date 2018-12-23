@@ -23,6 +23,7 @@ public class sendWrite {
 		try {
 			gui.document.insertString(gui.document.getLength(), message + System.lineSeparator(), gui.style);
 			hand.write(message+"\n");
+			gui.scroll();
 		} catch (BadLocationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

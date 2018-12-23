@@ -22,6 +22,7 @@ public class sendMessage{
         try {
         	gui.document.insertString(gui.document.getLength(), gui.msgBox.getText() + System.lineSeparator(), gui.style);
         	hand.write(gui.msgBox.getText()+"\n");
+        	gui.scroll();
         } catch (BadLocationException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

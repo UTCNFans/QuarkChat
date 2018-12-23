@@ -29,7 +29,6 @@ public class MessageListener extends Thread {
 	private FileFormatR fisierR = null;
 
 	public MessageListener(ChatGUI gui, int port) {
-		hand = new FileHandler(); // Vicodrus added comit
 		
 		this.gui = gui;
 		this.port = port;
@@ -43,6 +42,8 @@ public class MessageListener extends Thread {
 	@Override
 	public void run() {
 		LogFile.logger.log(Level.INFO, "Connexion has been started!");
+		hand = new FileHandler(); // Vicodrus added comit
+		
 		
 		/* --- Open uPnP --- */
 		if(gui.uPnPEnable == true)
