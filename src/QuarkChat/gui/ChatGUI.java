@@ -149,7 +149,7 @@ public class ChatGUI implements WritableGUI {
 
 		sendPort = new JTextField();
 		sendPort.setBounds(502, 9, 76, 20);
-		sendPort.setText("4321");
+		sendPort.setText("8879");
 		frmChat.getContentPane().add(sendPort);
 		sendPort.setColumns(10);
 
