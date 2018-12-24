@@ -91,7 +91,7 @@ public class FileFormat implements Formats {
 	@Override
 	public void digestInfo() throws IOException {	
 		// allocate memory for dataPack
-		this.dataPack = new byte[encryptionsMark.length + 1 + 1 + 20 + 20 + 4 + FileFormat.MAX_fileread];
+		this.dataPack = new byte[(int) (encryptionsMark.length + 1 + 1 + 20 + 20 + 4 + 1.5*FileFormat.MAX_fileread)];
 				
 		// add markers
 		this.dataPack[0] = MARKS[1];

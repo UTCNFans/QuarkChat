@@ -81,7 +81,7 @@ public class MessageSender extends Thread{
 					if(this.fisier.isFinish() == false) {
 						this.client.getOutputStream().write(fisier.getData());
 					}
-					else if(this.fisier.isFinish() == true) {
+					if(this.fisier.isFinish() == true) {
 						error_handle.write("[File Transfer] File has been succesfully transfered!", 2);
 						this.fisier = null; // stergem obiectul curent
 					}
