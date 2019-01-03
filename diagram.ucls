@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.2" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="QuarkChat.messageformats.FileFormat" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/messageformats/FileFormat.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="139" x="2807" y="1499"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="QuarkChat.gui.closeFrame" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/gui/closeFrame.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="122" x="224" y="136"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="QuarkChat.historyFile.FileHandler" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/historyFile/FileHandler.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="133" x="2428" y="1499"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="QuarkChat.networking.upnp.UPnP" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/networking/upnp/UPnP.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="152" x="927" y="136"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="QuarkChat.networking.MessageOpenuPnP" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/networking/MessageOpenuPnP.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="136" x="386" y="136"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="QuarkChat.networking.upnp.GatewayFinder.GatewayListener" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/networking/upnp/GatewayFinder.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="214" x="1097" y="1216"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="7" language="java" name="QuarkChat.messageformats.Formats" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/messageformats/Formats.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="129" x="2896" y="1836"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="8" language="java" name="QuarkChat.update.UpdateGUI" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/update/UpdateGUI.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="113" x="562" y="136"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="QuarkChat.networking.MessageListener" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/networking/MessageListener.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="178" x="2428" y="1216"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="QuarkChat.encryption.types.EncrSym" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/encryption/types/EncrSym.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="172" x="715" y="136"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="QuarkChat.gui.sendMessage" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/gui/sendMessage.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="309" x="1119" y="136"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="QuarkChat.main.Main" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/main/Main.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="113" x="1468" y="136"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="QuarkChat.encryption.SHA_1" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/encryption/SHA_1.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="121" x="1621" y="136"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="QuarkChat.messageformats.MessageFormat" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/messageformats/MessageFormat.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="139" x="2986" y="1499"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="QuarkChat.networking.upnp.Gateway" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/networking/upnp/Gateway.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="296" x="761" y="437"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="QuarkChat.messageformats.MessageFormatR" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/messageformats/MessageFormatR.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="145" x="2243" y="1499"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="QuarkChat.networking.MessageSender" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/networking/MessageSender.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="197" x="2646" y="1216"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="18" language="java" name="QuarkChat.messageformats.Reassamble" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/messageformats/Reassamble.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="129" x="2422" y="1836"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="19" language="java" name="QuarkChat.update.CheckUpdate" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/update/CheckUpdate.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="137" x="1782" y="136"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="QuarkChat.gui.connectButton" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/gui/connectButton.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="111" x="1959" y="136"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="QuarkChat.errorhandle.LogFile" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/errorhandle/LogFile.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="104" x="2110" y="136"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="QuarkChat.networking.upnp.GatewayFinder" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/networking/upnp/GatewayFinder.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="171" x="1097" y="437"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="QuarkChat.gui.checkboxuPnP" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/gui/checkboxuPnP.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="131" x="2254" y="136"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="QuarkChat.messageformats.FileFormatR" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/messageformats/FileFormatR.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="297" width="166" x="2601" y="1499"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="QuarkChat.encryption.AES" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/encryption/AES.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="159" x="2425" y="136"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="QuarkChat.encryption.types.fileDecryption" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/encryption/types/fileDecryption.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="156" x="3028" y="136"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="QuarkChat.gui.sendWrite" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/gui/sendWrite.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="222" x="2624" y="136"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="28" language="java" name="QuarkChat.networking.WritableGUI" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/networking/WritableGUI.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="124" x="2883" y="1216"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="29" language="java" name="QuarkChat.encryption.DES_3" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/encryption/DES_3.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="102" x="2886" y="136"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="QuarkChat.gui.ChatGUI" project="QuarkChat" 
+    file="/QuarkChat/src/QuarkChat/gui/ChatGUI.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="729" width="191" x="2646" y="437"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="31">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="32" name="finder"/>      
+      <multiplicity id="33" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="34">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="18"/>  
+  </realization>  
+  <realization id="35">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="18"/>  
+  </realization>  
+  <association id="36">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="37" name="fisierR"/>      
+      <multiplicity id="38" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="39">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="28"/>  
+  </realization>  
+  <association id="40">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="41" name="msgSender"/>      
+      <multiplicity id="42" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="43">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="44" name="error_handle"/>      
+      <multiplicity id="45" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="46">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="47" name="fisier"/>      
+      <multiplicity id="48" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="49">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
+  <association id="50">    
+    <bendpoint x="3037" y="437"/>    
+    <bendpoint x="3037" y="1216"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="51" name="fisier_primit"/>      
+      <multiplicity id="52" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="53">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="54" name="listeners"/>      
+      <multiplicity id="55" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="56">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="6"/>  
+  </nesting>  
+  <association id="57">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="58" name="gui"/>      
+      <multiplicity id="59" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="60">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="61" name="msgListen"/>      
+      <multiplicity id="62" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="63">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="64" name="listener"/>      
+      <multiplicity id="65" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="66">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="67" name="hand"/>      
+      <multiplicity id="68" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="69">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="70" name="defaultGW"/>      
+      <multiplicity id="71" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="72">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="73" name="gui"/>      
+      <multiplicity id="74" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="75">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="76" name="chatThis"/>      
+      <multiplicity id="77" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="78">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
