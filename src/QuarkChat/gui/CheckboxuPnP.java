@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JCheckBox;
 
-public class checkboxuPnP {
+public class CheckboxuPnP {
 	public static void chkbox(ChatGUI gui)
 	{
 		gui.chckbxUpnp = new JCheckBox("uPnP");

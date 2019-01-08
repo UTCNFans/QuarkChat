@@ -2,7 +2,7 @@ package QuarkChat.messageformats;
 
 import QuarkChat.encryption.types.EncrSym;
 
-public class MessageFormatR implements Reassamble {
+public class MessageFormatR implements Reassambler {
 	// original text before digestion
 	private byte[] message_byte = new byte[2048];
 	private byte[] encryptionUsage = new byte[5];

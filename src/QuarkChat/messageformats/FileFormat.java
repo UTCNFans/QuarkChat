@@ -14,7 +14,7 @@ import QuarkChat.encryption.SHA_1;
 import QuarkChat.encryption.types.EncrSym;
 import QuarkChat.errorhandle.LogFile;
 
-public class FileFormat implements Formats {
+public class FileFormat implements Formater {
 	/*
 	 * FILE FORMAT
 	 * 

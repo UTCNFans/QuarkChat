@@ -8,7 +8,7 @@ import java.util.logging.Level;
 
 import QuarkChat.errorhandle.LogFile;
 
-public class FileFormatR implements Reassamble {
+public class FileFormatR implements Reassambler {
 	// where to save the input file
 	FileOutputStream fisier = null;
 	

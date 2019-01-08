@@ -3,7 +3,7 @@ package QuarkChat.gui;
 import QuarkChat.networking.MessageListener;
 import QuarkChat.networking.MessageSender;
 
-public class connectButton {
+public class ConnectButton {
 	public static void btn(ChatGUI gui)
 	{
 		if(gui.btnConnect.getText() == "Connect")

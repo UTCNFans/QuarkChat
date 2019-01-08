@@ -4,7 +4,7 @@ import java.nio.ByteBuffer;
 
 import QuarkChat.encryption.types.EncrSym;
 
-public class MessageFormat implements Formats {
+public class MessageFormat implements Formater {
 	/*
 	 * MESSAGE FORMAT:
 	 * MARKER ENCRYPTION (SIZE SIZE SIZE SIZE) MESSAGE

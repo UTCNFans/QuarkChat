@@ -9,7 +9,7 @@ import java.io.IOException;
 import QuarkChat.gui.ChatGUI;
 import QuarkChat.messageformats.FileFormatR;
 
-public class fileDecryption extends Thread{
+public class FileDecryptor extends Thread{
 	// general informations
 	public static ChatGUI gui = null;
 	public static boolean forceStop = false; // to terminate the thread
@@ -20,7 +20,7 @@ public class fileDecryption extends Thread{
 	// usefull informations
 	private FileFormatR fisier_primit = null;
 	
-	public fileDecryption(FileFormatR file) {
+	public FileDecryptor(FileFormatR file) {
 		super();
 		this.fisier_primit = file;
 	}
@@ -60,7 +60,7 @@ public class fileDecryption extends Thread{
 		int remaining;
 		
 		try {
-			DECRYPTION_EXIT: while(fin.available() != 0 && fileDecryption.forceStop == false) {
+			DECRYPTION_EXIT: while(fin.available() != 0 && FileDecryptor.forceStop == false) {
 				remaining = fin.available();
 				
 				// as long as we can read
@@ -89,7 +89,7 @@ public class fileDecryption extends Thread{
 				}
 			}
 			
-			if(fileDecryption.forceStop == false) {
+			if(FileDecryptor.forceStop == false) {
 				if(bufferDe == null) {
 					gui.write("[File Transfer] Your file could not been decrypted!", 2);
 				}

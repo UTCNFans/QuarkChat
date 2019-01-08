@@ -1,6 +1,6 @@
 package QuarkChat.networking;
 
-import QuarkChat.encryption.types.fileDecryption;
+import QuarkChat.encryption.types.FileDecryptor;
 import QuarkChat.errorhandle.LogFile;
 import QuarkChat.gui.ChatGUI;
 import QuarkChat.historyFile.FileHandler;
@@ -112,7 +112,7 @@ public class MessageListener extends Thread {
 								gui.write("[File Transfer] File decryption has started...", 2);
 								
 								// start file decryption
-								fileDecryption decrypt = new fileDecryption(this.fisierR);
+								FileDecryptor decrypt = new FileDecryptor(this.fisierR);
 								decrypt.start();
 							}
 							

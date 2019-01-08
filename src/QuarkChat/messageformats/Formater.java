@@ -2,7 +2,7 @@ package QuarkChat.messageformats;
 
 import java.io.IOException;
 
-public interface Formats {
+public interface Formater {
 	public final static byte[] MARKS = {
 			0x34, // mark for MESSAGE FORMAT
 			0x35 // mark for FILE FORMAT

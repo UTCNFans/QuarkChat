@@ -4,10 +4,10 @@ import java.util.logging.Level;
 
 import javax.swing.JFrame;
 
-import QuarkChat.encryption.types.fileDecryption;
+import QuarkChat.encryption.types.FileDecryptor;
 import QuarkChat.errorhandle.LogFile;
 
-public class closeFrame {
+public class CloseFrame {
 	public static void close(ChatGUI gui)
 	{
 		gui.frmChat.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -21,7 +21,7 @@ public class closeFrame {
 		    	
 		    	if(gui.msgSender != null) {
 		    		gui.msgSender.stopThread = true;
-		    		fileDecryption.forceStop = true;
+		    		FileDecryptor.forceStop = true;
 		    		
 		    		try {
 						Thread.sleep(101);
@@ -32,7 +32,7 @@ public class closeFrame {
 		    		
 		    		gui.msgSender.closeConnexion();
 		    		gui.msgSender.interrupt();
-		    		fileDecryption.interrupted();
+		    		FileDecryptor.interrupted();
 		    	}
 		    	
 			    LogFile.logger.log(Level.INFO, "Application is closing", windowEvent);

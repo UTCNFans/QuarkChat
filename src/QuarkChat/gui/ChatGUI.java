@@ -123,7 +123,7 @@ public class ChatGUI implements WritableGUI {
 		btnConnect.setBounds(7, 7, 102, 23);
 		btnConnect.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				connectButton.btn(chatThis);
+				ConnectButton.btn(chatThis);
 			}
 		});
 		frmChat.getContentPane().setLayout(null);
@@ -174,7 +174,7 @@ public class ChatGUI implements WritableGUI {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-					sendMessage.normalMessage(chatThis, msgSender, msgListen.getHand());
+					SendWriter.normalMessage(chatThis, msgSender, msgListen.getHand());
 				}
 			}
 		});
@@ -187,7 +187,7 @@ public class ChatGUI implements WritableGUI {
 
 		sendBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				sendMessage.normalMessage(chatThis, msgSender, msgListen.getHand());
+				SendWriter.normalMessage(chatThis, msgSender, msgListen.getHand());
 			}
 		});
 		frmChat.getContentPane().add(sendBtn);
@@ -242,8 +242,8 @@ public class ChatGUI implements WritableGUI {
 		separator = new JSeparator();
 		ConnexionSettings.add(separator);
 
-		checkboxuPnP.chkbox(chatThis);
-		closeFrame.close(chatThis);
+		CheckboxuPnP.chkbox(chatThis);
+		CloseFrame.close(chatThis);
 
 		mnHistory = new JMenu("History");
 		menuBar.add(mnHistory);
@@ -300,7 +300,7 @@ public class ChatGUI implements WritableGUI {
 
 	// @Override
 	public void write(String s, int i) {
-		sendWrite.write(chatThis, i, s, msgListen.getHand());
+		RecieveWriter.write(chatThis, i, s, msgListen.getHand());
 	}
 
 	public boolean returnSave() {
