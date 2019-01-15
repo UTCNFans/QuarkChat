@@ -11,7 +11,10 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.logging.Level;
 
-
+/**
+ * Class which handles message receiving. It extends the Thread interface.
+ * It uses the Socket class for this.
+ **/
 public class MessageSender extends Thread{
 	
 	private String hostname;
@@ -33,12 +36,18 @@ public class MessageSender extends Thread{
 	// to stop the thread
 	public boolean stopThread;
 
+	/**
+	 * Constructor which receives a ChatGUI, a hostname and a port.
+	 **/
 	public MessageSender(String hostname, int port, ChatGUI gui_args) {
 		this.hostname = hostname;
 		this.port = port;
 		this.error_handle = gui_args;
 	}
 	
+	/**
+	 * Pauses the thread
+	 **/
 	private void ThreadSleep() {
 		// pause for a while
 		try {
@@ -50,6 +59,9 @@ public class MessageSender extends Thread{
 	}
 
 	@Override
+	/**
+	 * 
+	 **/
 	public void run(){
 		// disable stop when it runs
 		this.stopThread = false;

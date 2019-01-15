@@ -14,10 +14,10 @@ public class FileDecryptor extends Thread{
 	public static ChatGUI gui = null;
 	public static boolean forceStop = false; // to terminate the thread
 	
-	// usefull data
+	// useful data
 	private final int MAX_read = 304;
 	
-	// usefull informations
+	// useful informations
 	private FileFormatR fisier_primit = null;
 	
 	public FileDecryptor(FileFormatR file) {

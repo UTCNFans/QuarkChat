@@ -6,6 +6,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Date;
 
+/**
+ * Class which handles the history file
+ **/
 public class FileHandler {
 
 	File file;
@@ -16,6 +19,9 @@ public class FileHandler {
 	f.deleteFile();;
 	}
 	
+	/**
+	 * Default constructor. Initializes the file in which the history is written
+	 **/
 	public FileHandler() {
 		// TODO Auto-generated constructor stub
 		Date date = new Date();
@@ -35,6 +41,9 @@ public class FileHandler {
 		}
 	}
 	
+	/**
+	 * Writes into file
+	 **/
 	public void write(String string) {
 		try {if(writer!=null) {
 			if(file.canWrite()) {
@@ -46,7 +55,10 @@ public class FileHandler {
 			e.printStackTrace();
 		}
 	}
-
+	
+	/**
+	 * Deletes the created file
+	 **/
 	public void deleteFile() {
 		try {
 			writer.close();
@@ -57,6 +69,9 @@ public class FileHandler {
 		file.delete();
 	}
 	
+	/**
+	 * Closes the file
+	 **/
 	public void closeFile() {
 		try {
 			writer.close();

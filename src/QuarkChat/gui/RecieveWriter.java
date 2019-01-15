@@ -7,7 +7,14 @@ import javax.swing.text.StyleConstants;
 
 import QuarkChat.historyFile.FileHandler;
 
+/**
+ * Class which handles writing into GUI the received messages 
+ **/
 public class RecieveWriter {
+	
+	/**
+	 * Write received messages into GUI
+	 **/
 	public static void write(ChatGUI gui, int i, String message, FileHandler hand)
 	{
 		if(i == 1) {

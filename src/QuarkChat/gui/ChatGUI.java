@@ -307,6 +307,9 @@ public class ChatGUI implements WritableGUI {
 		return chckbxSave.isSelected();
 	}
 	
+	/**
+	 * Auto-scroll down
+	 **/
 	public void scroll() {
 		scrollPane.getVerticalScrollBar().setValue(scrollPane.getVerticalScrollBar().getMaximum());
 	}

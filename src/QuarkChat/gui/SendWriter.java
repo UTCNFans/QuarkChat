@@ -7,7 +7,15 @@ import javax.swing.text.StyleConstants;
 import QuarkChat.historyFile.FileHandler;
 import QuarkChat.networking.MessageSender;
 
+
+/**
+ * Class which handles writing into GUI the sent messages
+ **/
 public class SendWriter{
+	
+	/**
+	 * Write sent message in GUI
+	 **/
 	public static void normalMessage(ChatGUI gui, MessageSender sender, FileHandler hand)
 	{
 		StyleConstants.setForeground(gui.style, Color.GREEN);

@@ -15,7 +15,10 @@ import java.net.Socket;
 import java.util.Arrays;
 import java.util.logging.Level;
 
-
+/**
+ * Class which handles message receiving. It extends the Thread interface.
+ * It uses the Socket and ServerSocket classes for this.
+ **/
 public class MessageListener extends Thread {
 
 	private ServerSocket server;
@@ -29,6 +32,9 @@ public class MessageListener extends Thread {
 	// file to receive
 	private FileFormatR fisierR = null;
 
+	/**
+	 * Constructor which receives a ChatGUI and a port and opens the connection.
+	 **/
 	public MessageListener(ChatGUI gui, int port) {
 		
 		this.gui = gui;
@@ -40,10 +46,13 @@ public class MessageListener extends Thread {
 		}
 	}
 	
+	/**
+	 * The run method overridden. It receives and it processes byte by byte
+	 **/
 	@Override
 	public void run() {
 		LogFile.logger.log(Level.INFO, "Connexion has been started!");
-		hand = new FileHandler(); // Vicodrus added comit
+		hand = new FileHandler(); // Vicodrus added commit
 		
 		
 		/* --- Open uPnP --- */
@@ -131,6 +140,10 @@ public class MessageListener extends Thread {
 		}
 	}
 	
+	
+	/**
+	 * Closes all connections 
+	 **/
 	public void closeConnexions(boolean del)
 	{		
 		try {
@@ -157,6 +170,10 @@ public class MessageListener extends Thread {
 			LogFile.logger.log(Level.FINEST, "chatproject.networking.MessageListener.closeConnexions", error);
 		}
 	}
+	
+	/**
+	 * Gets the FileHandler
+	 **/
 	public FileHandler getHand() {
 		return hand;
 	}
