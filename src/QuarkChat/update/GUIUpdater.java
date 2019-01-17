@@ -17,7 +17,7 @@ import java.net.URISyntaxException;
 import java.util.logging.Level;
 import java.awt.event.ActionEvent;
 
-public class UpdateGUI {
+public class GUIUpdater {
 
 	public JFrame frame;
 
@@ -28,7 +28,7 @@ public class UpdateGUI {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					UpdateGUI window = new UpdateGUI();
+					GUIUpdater window = new GUIUpdater();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,7 +40,7 @@ public class UpdateGUI {
 	/**
 	 * Create the application.
 	 */
-	public UpdateGUI() {
+	public GUIUpdater() {
 		initialize();
 	}
 

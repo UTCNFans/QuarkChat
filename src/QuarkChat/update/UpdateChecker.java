@@ -7,7 +7,7 @@ import java.util.logging.Level;
 
 import QuarkChat.errorhandle.LogFile;
 
-public class CheckUpdate {
+public class UpdateChecker {
 	public static final String updateURL 		= "https://raw.githubusercontent.com/UTCNFans/QuarkChat/master/version"; // update URL, from where to download updates
 	public static final int currentVersion 		= 21; // current version (0.21)
 	

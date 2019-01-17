@@ -6,8 +6,8 @@ import java.util.logging.Level;
 import QuarkChat.encryption.types.FileDecryptor;
 import QuarkChat.errorhandle.LogFile;
 import QuarkChat.gui.ChatGUI;
-import QuarkChat.update.CheckUpdate;
-import QuarkChat.update.UpdateGUI;
+import QuarkChat.update.UpdateChecker;
+import QuarkChat.update.GUIUpdater;
 
 public class Main {
 
@@ -18,8 +18,8 @@ public class Main {
 		/* ------------ */
 		
 		/* Check for updates */
-		UpdateGUI updateWindow = new UpdateGUI();
-		if(CheckUpdate.isUpdate() == true) // exists an update available
+		GUIUpdater updateWindow = new GUIUpdater();
+		if(UpdateChecker.isUpdate() == true) // exists an update available
 		{
 			try {
 				updateWindow.frame.setVisible(true);
